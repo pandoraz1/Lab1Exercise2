@@ -33,45 +33,45 @@ public class MainActivity extends Activity {
 
         if (selFrom == R.id.rbFrmC) { //The user wants to convert from Celsius.
 
-            if (selTo == R.id.rbToC) { //The user wants to convert from Celsius.
+            if (selTo == R.id.rbToC) {
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToF) { //The user wants to convert from Celsius.
+            else if (selTo == R.id.rbToF) {
                 input = input * (9.0/5.0) + 32;
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToK) { //The user wants to convert from Celsius.
+            else if (selTo == R.id.rbToK) {
                 input = input + 273.15;
                 out.setText(Double.toString(input));
             }
         }
 
-        else if (selFrom == R.id.rbFrmF) { //The user wants to convert from Celsius.
+        else if (selFrom == R.id.rbFrmF) {
 
-            if (selTo == R.id.rbToC) { //The user wants to convert from Celsius.
+            if (selTo == R.id.rbToC) {
                 input = (input-32) * (5.0/9.0);
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToF) { //The user wants to convert from Celsius.
+            else if (selTo == R.id.rbToF) {
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToK) { //The user wants to convert from Celsius.
+            else if (selTo == R.id.rbToK) {
                 input = (input+459.67)*(5.0/9.0);
                 out.setText(Double.toString(input));
             }
         }
 
-        else if (selFrom == R.id.rbFrmK) { //The user wants to convert from Celsius.
+        else if (selFrom == R.id.rbFrmK) {
 
-            if (selTo == R.id.rbToC) { //The user wants to convert from Celsius.
+            if (selTo == R.id.rbToC) {
                 input = input - 273.15;
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToF) { //The user wants to convert from Celsius.
+            else if (selTo == R.id.rbToF) {
                 input = input * (5/9) - 459.67;
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToK) { //The user wants to convert from Celsius.
+            else if (selTo == R.id.rbToK) { 
                 out.setText(Double.toString(input));
             }
         }
