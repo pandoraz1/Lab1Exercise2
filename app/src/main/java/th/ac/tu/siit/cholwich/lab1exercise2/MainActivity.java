@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -14,6 +18,66 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
+    public void calculate(View v) {
+        EditText etInput = (EditText) findViewById(R.id.etInput);
+        String s = etInput.getText().toString();
+        double input = Double.parseDouble(s);
+
+        TextView out = (TextView)findViewById(R.id.tvOutput);
+
+        RadioGroup rgFrom = (RadioGroup) findViewById(R.id.rgFrom);
+        int selFrom = rgFrom.getCheckedRadioButtonId();
+
+        RadioGroup rgTo = (RadioGroup) findViewById(R.id.rgTo);
+        int selTo = rgTo.getCheckedRadioButtonId();
+
+        if (selFrom == R.id.rbFrmC) { //The user wants to convert from Celsius.
+
+            if (selTo == R.id.rbToC) { //The user wants to convert from Celsius.
+                out.setText(Double.toString(input));
+            }
+            else if (selTo == R.id.rbToF) { //The user wants to convert from Celsius.
+                input = input * (9.0/5.0) + 32;
+                out.setText(Double.toString(input));
+            }
+            else if (selTo == R.id.rbToK) { //The user wants to convert from Celsius.
+                input = input + 273.15;
+                out.setText(Double.toString(input));
+            }
+        }
+
+        else if (selFrom == R.id.rbFrmF) { //The user wants to convert from Celsius.
+
+            if (selTo == R.id.rbToC) { //The user wants to convert from Celsius.
+                input = (input-32) * (5.0/9.0);
+                out.setText(Double.toString(input));
+            }
+            else if (selTo == R.id.rbToF) { //The user wants to convert from Celsius.
+                out.setText(Double.toString(input));
+            }
+            else if (selTo == R.id.rbToK) { //The user wants to convert from Celsius.
+                input = (input+459.67)*(5.0/9.0);
+                out.setText(Double.toString(input));
+            }
+        }
+
+        else if (selFrom == R.id.rbFrmK) { //The user wants to convert from Celsius.
+
+            if (selTo == R.id.rbToC) { //The user wants to convert from Celsius.
+                input = input - 273.15;
+                out.setText(Double.toString(input));
+            }
+            else if (selTo == R.id.rbToF) { //The user wants to convert from Celsius.
+                input = input * (5/9) - 459.67;
+                out.setText(Double.toString(input));
+            }
+            else if (selTo == R.id.rbToK) { //The user wants to convert from Celsius.
+                out.setText(Double.toString(input));
+            }
+        }
+
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
