@@ -68,10 +68,10 @@ public class MainActivity extends Activity {
                 out.setText(Double.toString(input));
             }
             else if (selTo == R.id.rbToF) {
-                input = input * (5/9) - 459.67;
+                input = (input * (5.0/9.0)) - 459.67;
                 out.setText(Double.toString(input));
             }
-            else if (selTo == R.id.rbToK) { 
+            else if (selTo == R.id.rbToK) {
                 out.setText(Double.toString(input));
             }
         }
